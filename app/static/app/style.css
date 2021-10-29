@@ -1,0 +1,38 @@
+body{
+	margin: 0;
+	font-family: Arial;;
+	color: white;
+}
+
+.header{
+	background: rgb(20, 19, 19);
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	padding: 20px;
+	box-shadow: 4px 0px 20px 1px black;
+}
+.posts{
+	width: 60%;
+	margin: auto;
+}
+.post{
+	background: rgb(122, 80, 2);
+	margin-top: 40px;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 4px 4px 20px 1px black;
+}
+.post h2 a{
+	float: right;
+	color: white;
+	margin-left: 20px;
+	text-decoration: none;;
+}
+form{
+	margin-top: 20px;
+}
+input{
+	width: 100%;
+	height: 40px;
+}

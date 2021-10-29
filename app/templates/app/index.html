@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NustBoard - Communicate with your fellows</title>
+	<link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+<body>
+
+	<div class="header">
+		Welcome to NUSTBoard
+	</div>
+
+	<div class="posts">
+
+		<div class="new-post">
+			<form action="/create" method="post">
+				{% csrf_token %}
+				<input name="title" placeholder="Title">
+				<input name="text" placeholder="Text">
+				<input type="submit" value="Create New Post" >
+			</form>
+		</div>
+
+		{% for post in posts %}
+			<div class="post">
+				<h2>{{ post.title }}
+						<a href="/delete/{{ post.id }}">X</a>
+						<a href="/edit/{{ post.id }}">Edit</a>
+				</h2>
+				<p>{{ post.text }}</p>
+			</div>
+		{% endfor %}
+
+	</div>
+	
+</body>
+</html>
